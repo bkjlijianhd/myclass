@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>背景</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .one{
+        width: 500px;
+        height: 300px;
+        border: 10px solid rgba(255, 0, 0, 0.2);
+        padding: 10px;
+        margin: 50px auto;
+        background-image: url("./images/xm.jpg");
+        background-repeat: no-repeat;
+        /*background-size: cover;      */
+        /*background-size: contain;*/
+
+        /*background-size: 520px 320px;*/
+
+        background-size: 100% 100%;
+      }
+      .two{
+        width: 500px;
+        height: 300px;
+        padding: 10px;
+        border:10px solid rgba(255, 0, 0, 0.2);
+        background-image: url(./images/xm.jpg);
+        background-size: 300px 100px;
+        background-repeat: no-repeat;
+        /*background-origin: border-box;*/
+        background-origin: content-box;
+      }
+      /*.three{
+        width: 600px;
+        height: 500px;
+        background: url("./images/1.jpg") left  top/300px 200px no-repeat,
+        url("./images/2惊天下.jpg") top  right/300px 200px no-repeat,
+        url("./images/3.jpg") bottom  right/300px 200px no-repeat,
+        url("./images/4.jpg") bottom  left/300px 200px no-repeat,
+      }*/
+
+      .three {
+      width: 600px;
+      height: 500px;
+
+      background: url("./images/1.jpg") 0 0/300px 200px no-repeat,
+      url("./images/2.jpg") top right /300px 200px no-repeat,
+      url("./images/3.jpg") bottom right /300px 200px no-repeat,
+      url("./images/4.jpg") bottom left/300px 200px no-repeat;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </body>
+</html>

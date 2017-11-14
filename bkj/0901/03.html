@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3d</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      perspective:400px;
+      transform-style:preserve-3d;
+    }
+    .one,.two{
+      width: 200px;
+      height: 200px;
+      background: yellow;
+      transition: all 2s;
+      margin: 50px auto;
+    }
+    .one:hover{
+      transform: translateZ(100px);
+    }
+    .two:hover{
+      transform: scale3d(2,2,1);
+    }
+    .x{
+      width: 300px;
+      height:226px;
+      background: url("./image/x.jpg");
+      transition: all 2s;
+    }
+    .x:hover{
+      transform: rotateX(180deg);
+    }
+    .y{
+      width: 273px;
+      height: 300px;
+      background: url("./image/y.jpg");
+      transition: all 2s;
+    }
+    .y:hover{
+      transform: rotateY(180deg);
+    }
+    .z{
+      width: 330px;
+      height: 227px;
+      background-image: url(./image/z.jpg);
+      transition: all 2s;
+    }
+    .z:hover{
+      transform: rotateZ(180deg);
+    }
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+   <div class="one"></div>
+   <div class="two"></div>
+
+   <div class="x"></div>
+   <div class="y"></div>
+   <div class="z"></div>
+  </body>
+</html>

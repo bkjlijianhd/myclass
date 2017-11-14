@@ -1,0 +1,62 @@
+                <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义动画</title>
+    <style media="screen">
+      *{
+        margin:0;
+        padding:0;
+      }
+      #box{
+        width: 100px;
+        height:100px;
+        background: red;
+        position:absolute;
+        top:100px;
+        left:0;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="forward">前进</button>
+    <button id="backward">后退</button>
+    <div id="box"></div>
+    <script type="text/javascript">
+      var forward=document.getElementById("forward");
+      var backward=document.getElementById("backward");
+      var box=document.getElementById("box");
+
+      var timer;
+      forward.onclick=function(){
+        clearInterval(timer);//一定要先清除定时，确保只有一个定时器  所以类似的情况要上来就清除
+        timer=setInterval(function(){
+          box.style.left=box.offsetLeft+50+"px";
+          if(box.offsetLeft>1600){
+            clearInterval(timer);//这个清除是判断条件
+          }
+        },50);
+      };
+
+      backward.onclick=function(){
+        clearInterval(timer);//一定要先清除定时，确保只有一个定时器
+        timer=setInterval(function(){
+          box.style.left=box.offsetLeft-50+"px";
+          if(box.offsetLeft<=0){
+            clearInterval(timer);
+          }
+        },50);
+      };
+
+      //如果不上来就清除定时器会造成:连续点击前进按钮,移动的速度就加快
+      //还有就时点击完前进按钮再点击后退按钮,则块左右晃动不知道要去哪
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

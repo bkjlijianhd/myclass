@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .one{
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+      .one img{
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        top:50px;
+        left:0;
+        animation: car 2s linear ;
+        animation-fill-mode: forwards;
+      }
+      @keyframes car{
+        0%{
+          left:0px;
+          transform: skewX(30deg);
+        }
+        10%{
+          left:100px;
+        }
+        99%{
+          left:990px;
+          transform: skewX(-30deg);
+        }
+        100%{
+          left: 1000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one"><img src="./image/car.jpg" alt=""><div>
+  </body>
+</html>

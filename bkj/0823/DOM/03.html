@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .color_red{
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <div class="one_s">xxx</div>
+      <div class="one_s">xxx</div>
+      <div class="one_s color_red">yyy</div>
+      <p class="color_red">yyyy</p>
+    </div>
+    <ul class="two">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <div class="three">
+      <h2>three</h2>
+    </div>
+
+    <script src="../jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(".one_s.color_red").remove();
+      // $(".color_red").remove(".one_s");
+      $(".two").empty();
+      var temp=$(".three:eq(0)").detach();
+      console.log(temp);
+      $(".one").before(temp);
+    </script>
+  </body>
+</html>

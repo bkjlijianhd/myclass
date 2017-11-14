@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    #divId {
+            width: 200px;
+            height: 100px;
+            background: blue;
+          }
+    </style>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <button id="btn2">单击改变div的背景色</button>
+    <div id="divId"></div>
+
+     <script src="../jquery.min.js"></script>
+     <script type="text/javascript">
+       $("#btn").on('click',function(){
+         console.log("click 1....");
+       }).on('click',function(){
+         console.log("click 2...");
+       });
+       $("#btn").on('dblclick',function(){
+         console.log("dblclick 1...");
+       });
+
+
+
+       $("#divId").on("changeColor",function(){
+         $("#divId").css("background-color","red");
+       });
+       
+       $("#btn2").on('click',function(){
+         $("#divId").trigger("changeColor");
+       });
+     </script>
+
+
+
+
+
+
+  </body>
+</html>

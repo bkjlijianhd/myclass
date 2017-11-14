@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>正则表达式作业</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .error {
+      color: red;
+      visibility: hidden;
+    }
+
+    .error .show {
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="error" class="error">不是合法的邮箱</p>
+  <input id="em" type="text" placeholder="请输入邮箱">
+  <script type="text/javascript">
+    /*
+         功能：驼峰法命名转换为连字符命名
+         @str, 驼峰法命名的字符串
+         return, 转换成功的字符串
+         */
+    function toHr(str) {
+      return str.replace(/[A-Z]/g, function(match) {
+        return "-" + match.toLowerCase();
+      });
+    }
+    console.log(toHr("borderLeftWidth"));
+
+
+
+    var err = document.getElementById('error');
+    var em = document.getElementById('em');
+
+    em.addEventListener('blur', function(event) {
+      var str = this.value;
+      var pat = /^[\w_]+@[a-z\d]+\.[a-z]+$/;
+
+      if (!pat.test(str)) {
+        err.className += "show";
+        this.value = "";
+      }
+    }, false);
+
+    // name=lisi&age=10&hobby=eat&score=88&hobby=read&hobby=drink
+    /*
+    功能：就是将指定格式的字符串转换为另一种格式
+    @str
+    return, 转换之后的新字符串
+    */
+    function convert(str) {
+      var obj = {};
+      var temp = [];
+      //[^&=表示不是&=的] 左边=右边
+      str.replace(/[^&=]+)=([^&=]+)/g, function(match, p1, p2) {
+        obj[p1] = obj[p1] ? (obj[p1] + "," + p2) : p2;
+
+      });
+
+      for (var key in obj) {
+        temp.push(key + "=" + obj[key]);
+
+      }
+    }
+
+    convert("name=lisi&age=10&hobby=eat&score=88&hobby=read&hobby=drink");
+  </script>
+</body>
+
+</html>

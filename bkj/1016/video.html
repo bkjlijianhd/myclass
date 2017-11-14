@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>video控制面板</title>
+    <style media="screen">
+      *{
+        margin:0;
+        padding:0;
+      }
+      #video{
+        width:500px;
+        height:400px;
+      }
+      .panel{
+        width: 500px;
+      }
+
+      .panel progress{
+        width: 400px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <video id='video' controls>
+      <source src="./video/fun.mp4">
+    </video>
+
+    <div class="panel">
+      <div>
+        <progress id="progress" value="0" max="100"></progress>
+        <span id="current">00:00</span>/<span id="total">00:00</span>
+      </div>
+      <div>
+        <button id="play">播放</button>
+        <input id="volume" type="range" value="0.5" min="0" max="1" step="0.1">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var v = document.getElementById("video");
+    var current = document.getElementById("current");
+    var total = document.getElementById("total");
+    var play = document.getElementById("play");
+    var progress = document.getElementById("progress");
+    var volume = document.getElementById("volume");
+    var totalTime = 0, flag = false;
+
+    function formatTime(secs){
+      if(secs<3600){
+        var min=parseInt(secs/60);
+        min=min>9?min:"0"+min;//这是为了让开始计时显示00：00效果， 在span直接写00：00是为了开始显示
+
+        var s=parseInt(secs%60);
+        s=s>9?s:"0"+s;
+        return min +":"+s;
+      }
+    }
+    //获得视频总长
+    v.addEventListener('loadedmetadata',function(){            //当媒体的第一帧已经完成加载时，该事件被触发,是为了体现视频已经加载
+      totalTime=v.duration;
+      total.innerHTML=formatTime(v.duration);//为了通过formatTime函数的返回值结合duration算出总时间
+    },false);
+
+    play.onclick=function(){
+      if(!flag){       //只有用flag这个专门计算布尔值的标记来赋值true或false才有效
+        v.play();
+        flag=true;
+        play.innerHTML="暂停";
+      }else{
+        v.pause();
+        flag=false
+        play.innerHTML="播放"
+      }
+    };
+
+      //播放过程中会不断的触发该事件
+    v.addEventListener('timeupdate',function(){ //timeupdate  在timeupdate当由指定的时间事件被触发currentTime属性被更新。
+      current.innerHTML=formatTime(v.currentTime);//currentTime当前播放时间，单位为秒。为其赋值将会使媒体跳到一个新的时间。
+      progress.value=(v.currentTime/totalTime)*100;
+    },false);
+
+    volume.addEventListener('change',function(){
+      v.volume=volume.value;//volume 音频音量从0.0（无声）到1.0（最大）。
+    },false);
+
+
+    </script>
+
+
+
+
+
+
+
+  </body>
+</html>

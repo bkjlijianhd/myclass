@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      .w{
+        width: 1226px;
+        margin: 50px auto;
+      }
+      .top{
+        height: 30px;
+        line-height: 30px;
+      }
+      .top span{
+        float:left;
+        font-size: 22px;
+        color:gray;
+      }
+      a{
+        color:black;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 0px 15px;
+      }
+      /*a:hover{
+        color:#ff6700;
+      }*/
+      .dh{
+        float: right;
+      }
+      .left{
+      float: left;
+      margin-top: 20px;
+      }
+      .right{
+        width: 988px;
+        float:right;
+        margin-top: 16px;
+      }
+      ul li{
+        height: 300px;
+        list-style: none;
+        float: left;
+        /*padding: 0 9px;*/
+        background: white;
+        /*box-shadow: 2px 1px 2px gray;*/
+        margin: 5px 13px;
+        position: relative;
+
+      }
+      ul li:hover{
+          box-shadow: 4px 4px 4px gray;
+
+      }
+
+      .right .zk{
+        margin: 0 auto;
+        width: 65px;
+        height: 20px;
+        background: red;
+        font-size: 12px;
+        color:white;
+        text-align: center;
+      }
+      .right .xp{
+        margin: 0 auto;
+        width: 65px;r
+        height: 20px;
+        background: green;
+        font-size: 12px;
+        color:white;
+        text-align: center;
+      }
+      .right h2{
+        font-size: 14px;
+        text-align: center;
+        color:black;
+      }
+      .right .js{
+        font-size: 12px;
+        text-align: center;
+        color:gray;
+      }
+      .right .js span{
+        color:#ff6700;
+      }
+      .right ul li:nth-child(4) img{
+        margin-top: 18px;
+      }
+      .right .my{
+        margin: 0 auto;
+        width: 65px;
+        height: 20px;
+        background: green;
+        font-size: 12px;
+        color:white;
+        text-align: center;
+      }
+      .right .sxj div{
+        width: 223px;
+        height: 142px;
+        line-height: 142px;
+      }
+      .right .sxj h3{
+        height: 30px;
+        font-size: 14px;
+        color:black;
+        margin-left: 16px;
+      }
+      .right .sxj .s1{
+        font-size: 12px;
+        color:#ff6700;
+        margin-left: 16px;
+      }
+      .right .sxj .s2{
+        font-size: 12px;
+        color:gray;
+        margin-left: 16px;
+      }
+      .right .sxj .tt{
+        background-image: url(./images/18.jpg);
+        background-repeat: no-repeat;
+        background-size: 72px 72px;
+        background-position: 120px 45px;
+      }
+      .out{
+        width: 220px;
+        height: 0px;
+        text-align: center;
+        /*line-height: 40px;*/
+        background: #ff6700;
+        position: absolute;
+        color:white;
+        font-size: 12px;
+        bottom:0px;
+        /*animation: mz 2s linear infinite;
+        animation-fill-mode: forwards;
+        */
+        transition: all 2s;
+      }
+      .dh a.active{
+        color:#ff6700;
+        text-decoration: underline;
+      }
+      ul li:hover .out{
+        height: 60px;
+      }
+      .right>ul{
+          display: none;
+      }
+      .right ul.active{
+          display: block;
+      }
+/*
+      @keyframes mz{
+        0%{
+          transform: translateY(-40px);
+          display: none;
+        }
+        100%{
+            transform: translateY(0px);
+            display: block;
+        }
+      }*/
+
+
+    </style>
+  </head>
+  <body>
+    <div class="w">
+      <div class="top">
+        <span>家电</span>
+        <div class="dh">
+          <a href="#" class="active">热门</a>
+          <a href="#">电视影音</a>
+          <a href="#">电脑</a>
+          <a href="#">家居</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="left">
+          <img src="./images/01.jpg" alt="">
+        </div>
+        <div class="right">
+
+
+
+          <ul class="active">
+            <li>
+              <p class="zk">享9.2折<p>
+              <img src="./images/11.jpg" alt="">
+              <span>
+                <h2>小米电视4A32</h2>
+                <p class="js">64位四核处理器/1GB+4GB大内存<br><span>1099元</span></p>
+              </span>
+              <div class="out">
+                很支持国货小米,一个60寸的还
+                有一个32寸的,是否有...
+              <contents/div>
+            </li>
+            <li>
+              <p class="zk">享9.2折<p>
+              <img src="./images/12.jpg" alt="">
+              <span>
+                <h2>小米电视4A55英寸</h2>
+                <p class="js">4.9mm级超薄机身/4K高清HDR<br><span>3999元</span></p>
+                <div class="out">
+                  小米超级薄,高颜值,高性价
+                  比...
+                </div>
+            </li>
+            <li>
+              <p class="xp">新品<p>
+              <img src="./images/13.jpg" alt="">
+              <span>
+                <h2>小米笔记本Pro15.6英寸</h2>
+                <p class="js">全金属强化机身/FHD全贴合屏幕<br><span>5599元</span></p>
+            </li>
+            <li>
+              <img src="./images/14.jpg" alt="">
+              <span>
+                <h2>小米笔记本Air13.3i7处理器</h2>
+                <p class="js">interi7酷睿处理器,8G内存+256GB<br><span>5999元</span></p>
+                <div class="out">
+                   终于等来了贴纸,你能看出来这
+                   是苹果还是小米么!
+                </div>
+            </li>
+
+
+
+
+            <li>
+              <p class="my">免邮费<p>
+              <img src="./images/15.png" alt="">
+              <span>
+                <h2>小米路由器3C</h2>
+                <p class="js">APP智能控制,安全防蹭网<br><span>89元</span></p>
+              </span>
+              <div class="out">
+                爽!好看!客服妹子,能否获得
+                你的回复呢
+              </div>
+            </li>
+            <li>
+              <p class="xp">新品<p>
+              <img src="./images/16.jpg" alt="">
+              <span>
+                <h2>小米移动电源2C20000mAh</h2>
+                <p class="js"><br><span>129元</span></p>
+                <div class="out">
+                  很喜欢,充电宝真漂亮,盆友送
+                  我的生日礼物,一直再用小...
+                </div>
+            </li>
+            <li>
+              <p class="xp">新品<p>
+              <img src="./images/17.jpg" alt="">
+              <span>
+                <h2>米家电水壶</h2>
+                <p class="js">一杯水,是一家人的安心<br><span>99元</span></p>
+                <div class="out">
+                  美,,买一台送情人买一台送隔
+                  壁老王自己用一台跑MM
+                </div>
+            </li>
+            <li class="sxj">
+                <div class="tt">
+                <h3>小米摄像机</h3>
+                <span class="s1">399元</span>
+                </div>
+                <div>
+                <h3>浏览更多</h3>
+                <span class="s2">热门</span>
+                </div>
+            </li>
+          </ul>
+
+
+
+
+
+
+        <ul>
+          <li>
+            <img src="./images/03.jpg" alt="">
+            <span>
+              <h2>小米电视4A32</h2>
+              <p class="js">64位四核处理器/1GB+4GB大内存<br><span>1099元</span></p>
+            </span>
+            <div class="out">
+              很支持国货小米,一个60寸的还
+              有一个32寸的,是否有...
+            </div>
+          </li>
+          <li>
+            <p class="zk">享9.2折<p>
+            <img src="./images/04.png" alt="">
+            <span>
+              <h2>小米电视4A55英寸</h2>
+              <p class="js">4.9mm级超薄机身/4K高清HDR<br><span>3999元</span></p>
+              <div class="out">
+                小米超级薄,高颜值,高性价
+                比...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/05.png" alt="">
+            <span>
+              <h2>小米笔记本Pro15.6英寸</h2>
+              <p class="js">全金属强化机身/FHD全贴合屏幕<br><span>5599元</span></p>
+          </li>
+          <li>
+            <img src="./images/06.png" alt="">
+            <span>
+              <h2>小米笔记本Air13.3i7处理器</h2>
+              <p class="js">interi7酷睿处理器,8G内存+256GB<br><span>5999元</span></p>
+              <div class="out">
+                 终于等来了贴纸,你能看出来这
+                 是苹果还是小米么!
+              </div>
+          </li>
+
+          <li>
+            <p class="my">免邮费<p>
+            <img src="./images/07.jpg" alt="">
+            <span>
+              <h2>小米路由器3C</h2>
+              <p class="js">APP智能控制,安全防蹭网<br><span>89元</span></p>
+            </span>
+            <div class="out">
+              爽!好看!客服妹子,能否获得
+              你的回复呢
+            </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/08.jpg" alt="">
+            <span>
+              <h2>小米移动电源2C20000mAh</h2>
+              <p class="js"><br><span>129元</span></p>
+              <div class="out">
+                很喜欢,充电宝真漂亮,盆友送
+                我的生日礼物,一直再用小...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/09.jpg" alt="">
+            <span>
+              <h2>米家电水壶</h2>
+              <p class="js">一杯水,是一家人的安心<br><span>99元</span></p>
+              <div class="out">
+                美,,买一台送情人买一台送隔
+                壁老王自己用一台跑MM
+              </div>
+          </li>
+          <li class="sxj">
+              <div class="tt">
+              <h3>小米摄像机</h3>
+              <span class="s1">399元</span>
+              </div>
+              <div>
+              <h3>浏览更多</h3>
+              <span class="s2">热门</span>
+              </div>
+          </li>
+        </ul>
+
+
+
+
+        <ul>
+          <li>
+            <img src="./images/19.jpg" alt="">
+            <span>
+              <h2>小米电视4A32</h2>
+              <p class="js">64位四核处理器/1GB+4GB大内存<br><span>1099元</span></p>
+            </span>
+            <div class="out">
+              很支持国货小米,一个60寸的还
+              有一个32寸的,是否有...
+            </div>
+          </li>
+          <li>
+            <p class="zk">享9.2折<p>
+            <img src="./images/20.jpg" alt="">
+            <span>
+              <h2>小米电视4A55英寸</h2>
+              <p class="js">4.9mm级超薄机身/4K高清HDR<br><span>3999元</span></p>
+              <div class="out">
+                小米超级薄,高颜值,高性价
+                比...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/21.jpg." alt="">
+            <span>
+              <h2>小米笔记本Pro15.6英寸</h2>
+              <p class="js">全金属强化机身/FHD全贴合屏幕<br><span>5599元</span></p>
+          </li>
+          <li>
+            <img src="./images/22.jpg" alt="">
+            <span>
+              <h2>小米笔记本Air13.3i7处理器</h2>
+              <p class="js">interi7酷睿处理器,8G内存+256GB<br><span>5999元</span></p>
+              <div class="out">
+                 终于等来了贴纸,你能看出来这
+                 是苹果还是小米么!
+              </div>
+          </li>
+
+          <li>
+            <p class="my">免邮费<p>
+            <img src="./images/23.png" alt="">
+            <span>
+              <h2>小米路由器3C</h2>
+              <p class="js">APP智能控制,安全防蹭网<br><span>89元</span></p>
+            </span>
+            <div class="out">
+              爽!好看!客服妹子,能否获得
+              你的回复呢
+            </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/24.jpg" alt="">
+            <span>
+              <h2>小米移动电源2C20000mAh</h2>
+              <p class="js"><br><span>129元</span></p>
+              <div class="out">
+                很喜欢,充电宝真漂亮,盆友送
+                我的生日礼物,一直再用小...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/25.png" alt="">
+            <span>
+              <h2>米家电水壶</h2>
+              <p class="js">一杯水,是一家人的安心<br><span>99元</span></p>
+              <div class="out">
+                美,,买一台送情人买一台送隔
+                壁老王自己用一台跑MM
+              </div>
+          </li>
+          <li class="sxj">
+              <div class="tt">
+              <h3>小米摄像机</h3>
+              <span class="s1">399元</span>
+              </div>
+              <div>
+              <h3>浏览更多</h3>
+              <span class="s2">热门</span>
+              </div>
+          </li>
+        </ul>
+
+
+
+
+
+        <ul>
+          <li>
+            <img src="./images/26.jpg" alt="">
+            <span>
+              <h2>小米电视4A32</h2>
+              <p class="js">64位四核处理器/1GB+4GB大内存<br><span>1099元</span></p>
+            </span>
+            <div class="out">
+              很支持国货小米,一个60寸的还
+              有一个32寸的,是否有...
+            </div>
+          </li>
+          <li>
+            <p class="zk">享9.2折<p>
+            <img src="./images/27.jpg" alt="">
+            <span>
+              <h2>小米电视4A55英寸</h2>
+              <p class="js">4.9mm级超薄机身/4K高清HDR<br><span>3999元</span></p>
+              <div class="out">
+                小米超级薄,高颜值,高性价
+                比...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/28.jpg" alt="">
+            <span>
+              <h2>小米笔记本Pro15.6英寸</h2>
+              <p class="js">全金属强化机身/FHD全贴合屏幕<br><span>5599元</span></p>
+          </li>
+          <li>
+            <img src="./images/29.jpg" alt="">
+            <span>
+              <h2>小米笔记本Air13.3i7处理器</h2>
+              <p class="js">interi7酷睿处理器,8G内存+256GB<br><span>5999元</span></p>
+              <div class="out">
+                 终于等来了贴纸,你能看出来这
+                 是苹果还是小米么!
+              </div>
+          </li>
+
+          <li>
+            <p class="my">免邮费<p>
+            <img src="./images/30.jpg" alt="">
+            <span>
+              <h2>小米路由器3C</h2>
+              <p class="js">APP智能控制,安全防蹭网<br><span>89元</span></p>
+            </span>
+            <div class="out">
+              爽!好看!客服妹子,能否获得
+              你的回复呢
+            </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/31.jpg" alt="">
+            <span>
+              <h2>小米移动电源2C20000mAh</h2>
+              <p class="js"><br><span>129元</span></p>
+              <div class="out">
+                很喜欢,充电宝真漂亮,盆友送
+                我的生日礼物,一直再用小...
+              </div>
+          </li>
+          <li>
+            <p class="xp">新品<p>
+            <img src="./images/32.jpg" alt="">
+            <span>
+              <h2>米家电水壶</h2>
+              <p class="js">一杯水,是一家人的安心<br><span>99元</span></p>
+              <div class="out">
+                美,,买一台送情人买一台送隔
+                壁老王自己用一台跑MM
+              </div>
+          </li>
+          <li class="sxj">
+              <div class="tt">
+              <h3>小米摄像机</h3>
+              <span class="s1">399元</span>
+              </div>
+              <div>
+              <h3>浏览更多</h3>
+              <span class="s2">热门</span>
+              </div>
+          </li>
+        </ul>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+    var dh = document.getElementsByClassName('dh')[0].children;
+    var right = document.getElementsByClassName("right")[0].children;
+
+
+
+     //第一种方法，使用立即函数解决闭包导致的问题
+    for (var i = 0; i < dh.length; i++) {
+        (function(i){
+          dh[i].onmouseover=function(event){
+            for(var j=0;j<dh.length;j++){
+              dh[j].className="";
+              right[j].className="";
+            }
+            this.className="active";
+            right[i].className="active";
+          }
+        })(i)
+      }
+
+
+
+      // var tabs = document.getElementsByClassName('tabs')[0].children;
+      // var contents = document.getElementsByClassName("show")[0].children;
+      //
+      // //立即函数(可以隔离作用域，做到避免全局变量冲突问题):定义并且立刻调用，并且只调用一次
+      // // (function(){})()
+      // //通过每次调用立即函数，来达到让内部的处理函数拥有自己的 i
+      //
+      //
+      //  //第一种方法，使用立即函数解决闭包导致的问题
+      // for (var i = 0; i < tabs.length; i++) {
+      //     (function(i){
+      //       tabs[i].onmouseover=function(event){
+      //         for(var j=0;j<tabs.length;j++){
+      //           tabs[j].className="";
+      //           contents[j].className="";
+      //         }
+      //         this.className="active";
+      //         contents[i].className="active";
+      //       }
+      //     })(i)
+      //   }
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数柯里化</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //函数柯里化的基本方法和函数绑定是一样的：使用一个闭包返回一个函数。
+      function count(rate,price){
+        console.log(price*rate);
+      }
+      var newCount=count.bind(null,0.95);
+      newCount(1000);//950
+      newCount(10);//9.5
+      newCount(20);//19
+
+      var newCount=count.bind(null,0.5);
+      newCount(1000);//500
+
+      //bind的第一个参数是指定this 从第二个参数以后的参数全会传给函数
+       //新的函数带的参数也会传入
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>前端解析xml字符串</title>
+</head>
+
+<body>
+
+  <!--
+  xml VS  json:
+  1. xml代码冗余
+  2. xml 数据类型不够广泛
+  3. xml 解析复杂
+  -->
+
+  <script src="./jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var xmlStr =
+      `<?xml version="1.0" encoding="UTF-8"?>
+      <student  class="stu">
+        <name>lisi</name>
+        <age>10</age>
+        <score>88</score>
+        <hobbys>
+          <hobby>read</hobby>
+          <hobby>sport</hobby>
+          <hobby>drink</hobby>
+        </hobbys>
+      </student>`;
+
+      //返回是一个DOM对象, 不是jQuery对象！！！！！
+      var result = $.parseXML(xmlStr);//解析,得出DOM对象
+      console.log(result);//document对象,是DOM对象
+
+
+      //将DOM对象转换成了jQuery对象
+      var jdoc = $(result);
+
+      var stu = jdoc.find(".stu").eq(0);
+      var name = stu.find('name').text();//找到name的文本值
+      var age = stu.find('age').text();//找到age的文本值
+      var score = stu.find('score').text();//找到score的文本值
+      var hobbys = [];
+
+      stu.find("hobby").each(function(index,elem){
+        hobbys.push($(elem).text());//each为遍历数组 push添加 $elem转化DOM对象为jquer对象
+      });
+
+      console.log(hobbys);//数组
+
+      /*
+      使用原生javascript进行解析
+      */
+      //此处返回的result和 $.parseXML一模一样
+      result = (new DOMParser()).parseFromString(xmlStr, "application/xml");//固定写法
+      console.log(result);//document对象
+
+
+
+  </script>
+
+</body>
+
+</html>

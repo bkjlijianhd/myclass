@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .bp{
+        width: 200px;
+        height: 200px;
+        border: 5px solid black;
+        border-radius: 100px;
+        margin: 200px auto;
+        position: relative;
+      }
+      .s{
+        width: 5px;
+        height: 30px;
+        background: blue;
+        position: absolute;
+        top:68px;
+        left:98px;
+        opacity: 0.8;
+        animation: mz 43200s linear infinite;
+        transform-origin: bottom center;
+        z-index: 3;
+      }
+      .f{
+        width: 5px;
+        height: 45px;
+        background: green;
+        position: absolute;
+        top:54px;
+        left:98px;
+        opacity: 0.8;
+        animation: fz 3600s linear infinite;
+        transform-origin: bottom center;
+        z-index: 3;
+      }
+      .m{
+        width: 5px;
+        height: 60px;
+        background: red;
+        position: absolute;
+        top:36px;
+        left:98px;
+        opacity: 0.8;
+        animation: mz 60s linear infinite;
+        transform-origin: bottom center;
+        z-index: 3;
+      }
+      .d{
+        width: 20px;
+        height: 20px;
+        border: 1px solid red;
+        border-radius: 20px;
+        position: absolute;
+        top:86px;
+        left:90px;
+        background: red;
+        opacity: 0.2;
+        z-index: 3;
+      }
+      .kd1{
+        width: 8px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left: 98px;
+      }
+      .kd2{
+        width: 5px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left:98px;
+        transform: rotate(30deg);
+      }
+      .kd3{
+        width: 5px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left:98px;
+        transform: rotate(60deg);
+      }
+      .kd4{
+        width: 8px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left:98px;
+        transform: rotate(90deg);
+      }
+      .kd5{
+        width: 5px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left:98px;
+        transform: rotate(120deg);
+      }
+      .kd6{
+        width: 5px;
+        height: 200px;
+        background: gray;
+        position: absolute;
+        top:0;
+        left:98px;
+        transform: rotate(150deg);
+      }
+      .yp{
+        width: 180px;
+        height: 180px;
+        border: 1px solid white;
+        border-radius: 90px;
+        position: absolute;
+        background: white;
+        top:9px;
+        left:9px;
+        z-index: 2;
+      }
+      .x1{
+        position: absolute;
+        top:9px;
+        left:92px;
+        color:pink;
+        z-index: 3;
+        font-weight: bolder;
+      }
+      .x2{
+        position: absolute;
+        top:174px;
+        left:98px;
+        color:pink;
+        font-weight: bolder;
+        z-index: 3;
+      }
+      .x3{
+        position: absolute;
+        top:91px;
+        left:182px;
+        color:pink;
+        font-weight: bolder;
+        z-index: 3;
+      }
+      .x4{
+        position: absolute;
+        top:91px;
+        left:10px;
+        color:pink;
+        font-weight: bolder;
+        z-index: 3;
+      }
+      @keyframes sz{
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes fz{
+        0%{
+          transform: rotate(91px0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes mz {
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="bp">
+    <div class="s"></div>
+    <div class="f"></div>
+    <div class="m"></div>
+    <div class="d"></div>
+    <div class="kd1"></div>
+    <div class="kd2"></div>
+    <div class="kd3"></div>
+    <div class="kd4"></div>
+    <div class="kd5"></div>
+    <div class="kd6"></div>
+    <div class="yp"></div>
+    <div class="x1">12</div>
+    <div class="x2">6</div>
+    <div class="x3">3</div>
+    <div class="x4">9</div>
+    </div>
+  </body>
+</html>

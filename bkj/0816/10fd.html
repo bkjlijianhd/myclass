@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>浮动float</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        width: 1000px;
+        height: 600px;
+        border: 1px solid gray;
+        float:left;
+      }
+      .s{
+        width: 200px;
+        height: 200px;
+        background: red;
+        float:left;
+      }
+
+      .m{
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+
+      .b{
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="f">
+     <div class="s">1</div>
+     <div class="m">2</div>
+     <div class="b">3</div>
+     <p>的空间好看放大镜看好就萨拉打卡撒黄金开发了就好了非净利润就会立刻节日快乐还加入了会计利润空间</p>
+   </div>
+       <p>的空间好看放大镜看好就萨拉打卡撒黄金开发了就好了非净利润就会立刻节日快乐还加入了会计利润空间</p>
+    <!-- 一个元素的位置是否受浮动影响主要看上一个元素是否浮动,只要上一个元素
+          发生浮动,那么这个元素一定会去上个元素左上端位置,是父子关系的,这个元素属于子元素,那么后边的元素
+          全会跟上来 -->
+          <!--例如上边的.s设置浮动,.m会到了.s的位置,再给.m设置浮动.b到了.m的位置.其他同理,与他们父元素是否浮动无关  -->
+          <!--父元素的浮动会影响其他兄弟元素的位置例如外边的<p>  -->
+
+
+
+  </body>
+</html>

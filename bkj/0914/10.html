@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event对象</title>
+  </head>
+  <body>
+    <button id="btn">btn</button>
+    <script type="text/javascript">
+      var btn=document.getElementById("btn");
+
+      btn.onclick=function(event){
+        console.log("btn-------");
+        // console.log(event);打印事件,则为一堆和该事件有关系的属性和方法
+        // console.log(event.type);类型为click
+
+        /*
+        在事件处理函数内部：
+        this完全等价于 event.currentTarget, 指向的都是注册该事件处理程序的元素!!!
+        例如button或者document
+        */
+      console.log(this);
+      console.log(event.currentTarget);
+
+      /*
+      在事件处理函数内部：
+      event.target, 指向的都是 触发该元素的该事件的<源头>！！！！
+      */
+      console.log(event.target);//本身就是button
+    };
+
+    document.onclick=function(){
+      console.log("document-----");
+      console.log(this);
+      console.log(event.currentTarget);
+      console.log(event.target);//指向button
+    }
+
+    </script>
+  </body>
+</html>

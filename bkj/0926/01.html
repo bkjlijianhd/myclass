@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Animal(species){
+        this.species=species;
+      }
+      Animal.prototype.eat=function(){
+        console.log("eat...");
+      };
+      function Dog(type,hairColor){
+        this.species="dog"
+        this.type=type;
+        this.hairColor=hairColor;
+      }
+      Dog.prototype=new Animal();
+      Dog.prototype.constructor=Dog;
+
+      Dog.prototype.bark=function(){
+        console.log("wang wang....");
+      }
+      Dog.prototype.run=function(){
+        console.log("so so....");
+      }
+
+      Dog.prototype.eat=function(){
+        console.log("dog eat...");
+      }
+
+      var jinmao=new Dog("jinmao","yellow");
+      console.log("dog eat...");
+
+
+      var jinmao=new Dog("jinmao","yellow");
+      console.log(jinmao);//31 39 体现了覆盖
+
+      jinmao.bark();
+      jinmao.run();
+      jinmao.eat();
+    //自己添加的方法必须要在继承之后,如果自己添加的属性方法与原型重合,则会覆盖原型
+    </script>
+  </body>
+</html>

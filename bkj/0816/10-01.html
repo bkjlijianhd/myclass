@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>浮动float</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        width: 1000px;
+        height: 600px;
+        border: 1px solid gray;
+        float:left;
+      }
+      .s{
+        width: 200px;
+        height: 200px;
+        background: red;
+        float:left;
+      }
+
+      .m{
+        width: 200px;
+        height: 200px;
+        background: red;
+        float:left;
+      }
+
+      .b{
+        width: 200px;
+        height: 200px;
+        background: red;
+        float: right;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="f">
+     <div class="s">1</div>
+     <div class="m">2</div>
+     <div class="b">3</div>
+     <p>的空间好看放大镜看好就萨拉打卡撒黄金开发了就好了非净利润就会立刻节日快乐还加入了会计利润空间</p>
+   </div>
+       <p>的空间好看放大镜看好就萨拉打卡撒黄金开发了就好了非净利润就会立刻节日快乐还加入了会计利润空间</p>
+
+  <!--现在.s设置左浮动,下边的元素依然会上去,即.m会到.s左端的位置,然后设置左浮动,.b跟到了.m的位置,此时给.b设置右浮动.b到了
+      右侧,内测<p>跟着上去了  -->
+      <!--同样和父元素没有关系,他兄弟元素的位置有关和上边父元素有关-->
+
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event对象</title>
+  </head>
+  <body>
+    <button id="btn">btn</button>
+    <a id="ln" href="https://www.baidu.com" target="_blank">跳到百度</a>
+
+    <script type="text/javascript">
+      var btn=document.getElementById("btn");
+      var ln=document.getElementById("ln");
+
+      btn.onclick=function(event){
+        console.log("btn触发...");
+         // 阻止事件的传递！！！！！！！就是阻止了false从内向外传
+        event.stopPropagation();
+      };
+      document.onclick=function(){
+        console.log("document触发");
+      }
+      ln.onclick=function(event){
+        event.stopPropagation();
+        // 阻止默认的行为 a链接不起作用了
+        event.preventDefault();
+      };
+
+
+    </script>
+
+
+
+
+  </body>
+</html>

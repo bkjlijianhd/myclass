@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>超时定时器</title>
+  </head>
+  <body>
+
+  <script type="text/javascript">
+      var timer=setTimeout(function(){
+        console.log("xxxx");
+      },5000);
+      console.log(timer);//1
+
+      //1 先出来之后才会打印xxxxx
+      //超时定时器只执行一次！！！！
+  </script>
+  </body>
+</html>

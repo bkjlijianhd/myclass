@@ -1,0 +1,17 @@
+// %
+%hehe{
+  letter-spacing: 20px;
+}
+
+.one{
+  width: 100px;
+  height: 100px;
+  @extend %hehe;
+}
+.two{
+  @extend %hehe;
+}
+.three{
+  width: 200px;
+  background: red;
+}

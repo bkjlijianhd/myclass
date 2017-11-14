@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this问题</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <script type="text/javascript">
+      var btn=document.getElementById('btn');
+      btn.value=100;//btn自己的属性值
+
+      var value=0;//全局变量
+
+      var obj={
+        value:10,//obj对象中的变量值
+        handler:function(){
+          console.log(this.value);
+        }
+      };
+
+      obj.handler();//10(蓝色)
+
+      btn.addEventListener('click',function(){
+        console.log(this.value);//100(灰色)
+      },false);
+
+      //如果直接将一个函数作为 事件处理函数，那么只是将该函数的代码放到此处而已，和函数原来的this没有关系
+      //完全等价于  第一种方式的代码
+      btn.addEventListener('click',obj.handler,false);//100(灰色)
+
+      btn.addEventListener('click',function(){
+        console.log(this);//button
+        obj.handler();//10(蓝色)
+        obj.handler.call(this);//100(灰色)
+      },false);
+      //其实只要调用的是obj.handler()就调用了handler函数值为10
+      //除此外任和的写法都是相当于调用了btn的属性值,值为100
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>有关() 和{}的问题</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      console.log(/^\(helloworld\)$/.test("(helloworld)"));//ture
+      console.log(/^\{helloworld\}$/.test("{helloworld}"));//ture
+      console.log(/\.abc/.test(".abc"));//ture
+      //这就是要还原() {} 还有. 的方法  添加转义字符"\"
+    </script>
+  </body>
+</html>

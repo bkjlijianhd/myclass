@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>标红敏感词</title>
+    <style media="screen">
+      #content{
+       width: 500px;
+       height: 300px;
+       padding: 5px;
+       border: 1px solid gray;
+       border-radius: 5px;
+      }
+      #content span{
+        color:red;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+     <!-- contenteditable设置为true，那么就变成了文本编辑区域  -->
+     这里用textarea,不可以识别标签
+    <div id="content" contenteditable="true"></div>
+    <script type="text/javascript">
+      var content=document.getElementById('content');
+      // content.innerHTML = "<span>马上就标红!</span>授课汉家江湖空间很看好课后";
+      //这就是变红的原理
+      var keywords=["习近平", "薄熙来", "周永康", "郭伯雄", "徐才厚"];
+      var pattern=new RegExp(keywords.join("|"),"g")
+      //用new的方法创建正则表达式,第一个参数是变量,就是keywords可变,
+      //第二个参数是g等等,那几个标志位符.
+      content.addEventListener('blur',function(){
+        var src=content.innerHTML;
+        content.innerHTML=src.replace(pattern,function(match){
+           // return "<span>" + match + "</span>";
+          return "<mark>"+matchi+"</mark>";//mark是自带的一个有标记的标签
+        });
+      },false);
+      //这种方法有问题就是失去光标再输入,就会全被标记
+    </script>
+  </body>
+</html>

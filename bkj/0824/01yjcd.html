@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      ul li{
+        list-style: none;
+      }
+      #menu{
+        width: 250px;
+        border: 1px solid red;
+        position: absolute;
+        display: none;
+      }
+      #menu li{
+        height: 30px;
+        line-height: 30px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>返回</li>
+      <li>前进</li>
+      <li>重新加载</li>
+      <li>另存为</li>
+      <li>打印</li>
+      <li>投射</li>
+    </ul>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).contextmenu(function(e){
+        var x=e.pageX;
+        var y=e.pageY;
+        e.preventDefault();
+        // e.stopPropagation();
+
+        $("#menu").css({
+          "display":"block",
+          "top":y+"px",
+          "left":x+"px"
+        });
+      });
+    </script>
+  </body>
+</html>

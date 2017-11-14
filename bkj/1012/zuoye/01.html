@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>绘制圆饼加文字</title>
+  </head>
+  <body>
+    <canvas id="canvas">你的浏览器不支持canvas</canvas>
+
+ <script type="text/javascript">
+   //1. 获得canvas画布dom对象
+   var can = document.getElementById("canvas");
+
+   //canvas元素是具有width, height的属性
+   can.width = 500;
+   can.height = 500;
+
+   can.style.border = "1px solid red";
+
+   //2. 获得画布的上下文对象
+   var cxt=can.getContext("2d");
+
+    //绘制扇形
+   cxt.beginPath();
+   cxt.moveTo(200,200);
+   cxt.fillStyle="red";
+   cxt.arc(200,200,100,0,Math.PI*0.2,false);
+   cxt.fill();
+
+   cxt.beginPath();
+   cxt.moveTo(200,200);
+    cxt.fillStyle="yellow";
+   cxt.arc(200,200,100,Math.PI*0.2,Math.PI*0.6,false);
+   cxt.fill();
+
+   cxt.beginPath();
+   cxt.moveTo(200,200);
+    cxt.fillStyle="blue";
+   cxt.arc(200,200,100,Math.PI*0.6,Math.PI*1.2,false);
+   cxt.fill();
+
+   cxt.beginPath();
+   cxt.moveTo(200,200);
+   cxt.arc(200,200,100,Math.PI*1.2,Math.PI*2,false);
+   cxt.fillStyle="green";
+   cxt.fill();
+
+
+   cxt.beginPath();
+   cxt.fillStyle="green";
+   cxt.font="20px 宋体";
+   cxt.fillText("40%",200,90);
+
+   cxt.beginPath();
+   cxt.fillStyle="blue";
+   cxt.font="20px 宋体";
+   cxt.fillText("30%",60,200);
+
+   cxt.beginPath();
+   cxt.fillStyle="yellow";
+   cxt.font="20px 宋体";
+   cxt.fillText("20%",200,320);
+
+   cxt.beginPath();
+   cxt.fillStyle="red";
+   cxt.font="20px 宋体";
+   cxt.fillText("10%",310,200);
+
+
+
+
+
+
+
+
+
+
+  </script>
+  </body>
+</html>

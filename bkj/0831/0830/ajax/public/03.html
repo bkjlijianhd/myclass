@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>模拟登录</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        color: red;
+      }
+      .dl{
+        width:344px;
+        height: 366px;
+        background: white;
+        border: 1px solid black;
+        margin: 50px auto;
+        position:relative;
+      }
+      .one{
+        width: 168px;
+        height: 55px;
+        line-height: 55px;
+        float: left;
+        text-align:center;
+      }
+      .two{
+        width: 168px;
+        height: 55px;
+        line-height: 55px;
+        float: right;
+        text-align: center;
+      }
+      .three{
+        width: 302px;
+        height: 40px;
+        border: 1px solid gray;
+        position: absolute;
+        top:70px;
+        left:20px;
+        right:20px;
+      }
+      .three input{
+        width: 256px;
+        height: 36px;
+        float: left;
+        border: none;
+        outline: none;
+      }
+      .three img{
+        float:left;
+      }
+      .four{
+        width: 302px;
+        height: 40px;
+        border: 1px solid gray;
+        position: absolute;
+        top:140px;
+        left:20px;
+        right:20px;
+        background-image: url(./images/qx04.png);
+        background-repeat: no-repeat;
+        background-position: 0px 3px;
+      }
+      .four input{
+        width: 256px;
+        height: 36px;
+        float: right;
+        border: none;
+        outline: none;
+      }
+      .five{
+        width: 302px;
+        height: 32px;
+        border: 1px solid gray;
+        position: absolute;
+        top:252px;
+        left:20px;
+        right:20px;
+        background: red;
+      }
+      #btn{
+        width: 80px;
+        margin: 2px 110px;
+        background: red;
+        outline: none;
+        font-size: 16px;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dl">
+      <div class="one"><a href="#">扫码登录</a></div>
+      <div class="two"><a href="#">账户登录</a></div>
+      <div class="three">
+        <img src="./images/xq02.png" alt="">
+        <input type="text" name="username" value="邮箱/同户名/已验证手机">
+      </div>
+      <div class="four">
+        <input type="passwd" name="password" value="密码">
+      </div>
+      <div class="five"><button id="btn">登录<button></div>
+    </div>
+
+      <script src="./js/jquery.min.js" charset="utf-8"></script>
+      <script type="text/javascript">
+      $(function(){
+      $("#btn").click(function(){
+
+         var username=$(".three input[name=username]").val();
+         var password=$(".four input[name=password]").val();
+
+         if((!username)||(!password)){
+           return;
+         }
+
+       $.ajax({
+         method: "post",
+         url: "/login",
+         data: {name:username,passwd:password},
+         success: function(data, textStatus, jqXHR){
+           console.log("recv from server: ",data);
+           console.log("http status code : " + textStatus);
+          if(data=="OK"){
+            // window.location = "https://www.jd.com";
+          }else{
+            $(".three input").val("");
+            $(".four input").val("");
+          }
+         },
+         error: function(jqXHR, textStatus, error){
+           console.error(error);
+           console.log("http status code : " + textStatus);
+         }
+       });
+
+       });
+     });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

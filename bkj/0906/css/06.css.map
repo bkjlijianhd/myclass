@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGE,oCAAqC;EAMrC,IAAI;IACF,KAAK,EAAC,MAAM;IACZ,SAAS,EAAE,IAAI;AARjB,oCAAqC;EAarC,IAAI;IACF,KAAK,EAAC,GAAG;IACT,SAAS,EAAE,IAAI",
+"sources": ["../scss/06.scss"],
+"names": [],
+"file": "06.css"
+}

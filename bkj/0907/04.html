@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initital-scale=1">
+
+  <title></title>
+  <link herf="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    div.no-padding {
+      padding: 0;
+    }
+
+    .container-fluid .row>div {}
+
+    .container-fluid .row>div>img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width:300px) {
+      .container-fluid>.row>div {
+        width: 100%;
+      }
+    }
+  </style>
+  <!-- IE中独有的条件hack -->
+  <!--[if it IE 9]>
+          <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/1.webp" alt="">
+      </div>
+
+
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/2.webp" alt="">
+      </div>
+
+
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/3.webp" alt="">
+      </div>
+
+
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/4.webp" alt="">
+      </div>
+
+
+
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/5.webp" alt="">
+      </div>
+
+
+      <div class="no padding col-md-2 col-sm-4 col-xs-6">
+        <img class="img-thumbnail" src="./img/6.webp" alt="">
+      </div>
+      <div class="col-md-4 hidden-md">
+        我是多余的
+      </div>
+    </div>
+  </div>
+</body>
+</html>

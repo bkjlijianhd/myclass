@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>date日期时间</title>
+  </head>
+  <body>
+    <button type="button" id="btn">获取当前时间</button>
+    <button type="button" id="btn2">设置时间</button>
+    <script type="text/javascript">
+      document.getElementById('btn').onclick=function(){
+        var d =new Date();
+        console.log(d);//Wed Sep 20 2017 14:54:11 GTM+0800(CST)
+
+        console.log("年",d.getFullYear());//2017
+        console.log("月",d.getMonth()+1);//9  月的设置只有数字0到11
+        console.log("日",d.getDate());//20
+        console.log("星期",d.getDay());//3
+        console.log("时",d.getHours());//14
+        console.log("分",d.getMinutes());//54
+        console.log("秒",d.getSeconds());//11
+        console.log("毫秒",d.getMilliseconds());//815
+        console.log("累计毫秒",d.getTime());
+
+
+        console.log("---------某种格式的时间格式--------");
+
+        console.log(d.toDateString());//Wed Sep 20 2017
+        console.log(d.toTimeString());//14:54:11 GTM+0800(CST)
+        console.log(d.toLocaleDateString());//2017/9/20
+        console.log(d.toLocaleTimeString());//下午2:54:11
+        console.log(d.toString());//Wed Sep 20 2017 14:54:11 GTM+0800(CST)
+      };
+
+
+      document.getElementById("btn2").onclick=function(){
+        var d1=new Date("2017-11-11 11:11:11");
+        console.log(d1);
+
+        var d2=new Date();
+        d2.setFullYear(2017);
+        d2.setMonth(10);//11  月的设置只有数字0到11
+        d2.setDate(11);
+        d2.setHours(11);
+        d2.setMinutes(11);
+        d2.setSeconds(11);
+        console.log(d2);
+
+      }
+
+
+
+    </script>
+  </body>
+</html>

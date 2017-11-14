@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .one {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      background: #f00;
+      margin: 100px auto;
+      transform: rotate(45deg);
+      animation: h1 2s linear infinite;
+    }
+
+
+    .one1 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #f00;
+      border-radius: 100px;
+      left: -100px;
+    }
+    .one2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #f00;
+      border-radius: 100px;
+      top: -100px;
+      left:0;
+    }
+
+    @keyframes h1 {
+      0% {
+        transform: rotate(45deg) scale(0.8, 0.8);
+        opacity: 1;
+      }
+      25% {
+        transform: rotate(45deg) scale(1, 1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: rotate(45deg) scale(0.8, 0.8);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one">
+    <div class="one1"></div>
+    <div class="one2"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+//content
+
+@mixin max-screen($size){
+  @media screen  and (max-width: $size){
+    @content;
+  }
+}
+
+@include max-screen(980px){
+  .one{
+    color:yellow;
+    font-size: 30px;
+  }
+}
+
+@include max-screen(500px){
+  .two{
+    color:red;
+    font-size: 20px;
+  }
+}

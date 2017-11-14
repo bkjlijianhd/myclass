@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css操作</title>
+    <style>
+     .back{
+       width: 500px;
+       height: 500px;
+       background: pink;
+     }
+
+     .color_red {
+       color: red;
+     }
+
+   </style>
+  </head>
+  <body>
+   <div class="one">hjjhdjhkjhk</div>
+   <div class="one">hjjhdjhkjhk</div>
+   <div class="one">hjjhdjhkjhk</div>
+   <div class="one">hjjhdjhkjhk</div>
+    <script src="../jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // $(".one").css("width","500px");
+      // $(".one").css("height","500px");
+      // $(".one").css("background","pink");
+
+
+
+      // $(".one").css({
+      //   "width":"500px",
+      //   "height":"500px",
+      //   "background":"pink"
+      // });
+
+      $(".one").addClass("back color_red");
+      $(".one").removeClass("back colotoggleed");
+      $(".one").toggleClass("back");
+
+      console.log($(".one").css("width"));
+      console.log($(".one").css("height"));
+      console.log($(".one").css("background-color"));
+
+      console.log($(".one").css(["width","height","background-color"]));
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+  </body>
+</html>

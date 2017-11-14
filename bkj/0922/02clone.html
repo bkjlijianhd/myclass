@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>对象深克隆</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var deepClone = function(obj) {
+      var copy = Object.create(Object.getPrototypeOf(obj));
+      var propNames = Object.getOwnPropertyNames(obj);
+
+      propNames.forEach(function(name) {
+        var desc = Object.getOwnPropertyDescriptor(obj, name);
+        Object.defineProperty(copy, name, desc);
+      });
+
+      return copy;
+    }
+
+    var obj1 = {
+      name: "zhangsan",
+      score: 80,
+      age: 27
+    };
+    var obj2 = deepClone(obj1);
+    console.log(obj1);
+    console.log(obj2);
+
+
+  </script>
+</body>
+
+</html>

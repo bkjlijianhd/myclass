@@ -1,0 +1,31 @@
+/*selector nest*/
+.one {
+  color: yellow;
+  height: 200px;
+  line-height: 200px; }
+  .one .one_1 {
+    font-size: 50px;
+    color: green; }
+    .one .one_1 .one_1_1 {
+      background: red; }
+
+.two {
+  color: yellow;
+  height: 200px;
+  line-height: 200px; }
+  .two .two_1 {
+    font-size: 50px;
+    color: green; }
+    .two .two_1 .two_1_1 {
+      background: red; }
+    .two .two_1::before {
+      content: "before..."; }
+  .two::before {
+    content: "before1..."; }
+
+.three div {
+  color: green; }
+.three > div {
+  font-size: 100px; }
+
+/*# sourceMappingURL=03.css.map */

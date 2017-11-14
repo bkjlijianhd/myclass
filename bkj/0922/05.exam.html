@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>考试</title>
+  </head>
+  <body>
+
+    <script>
+
+      //判断一个数是否是2的n次方  &位与运算自动转成二进制每位进行与运算  得出结论
+      function is2Pow(num){
+        return  (num > 0) && ((num & num -1) === 0);
+      }
+
+
+      //栈是下端封闭上端开口,所以先进后出,使用一个栈无法先进先出.
+      //使用了2个栈，实现先进先出的队列
+      (function(){
+        var src = [], dest = [];
+
+        function enqueue(value){
+          src.push(value);//push实现栈添加元素的方法
+        }
+
+        function dequeue(){
+
+          while (src.length){
+            dest.push(src.pop());//dest添加src弹出的元素
+          }
+
+          return  dest.pop();//实现栈中弹出元素的方法
+        }
+
+
+        enqueue(1);
+        enqueue(2);
+        enqueue(3);
+        enqueue(4);
+
+        console.log(dequeue());//1
+        console.log(dequeue());//2
+        console.log(dequeue());//3
+        console.log(dequeue());//4
+
+      })();// 这里使用立即函数,是为了隔离之前的作用域.
+
+
+
+
+
+    // 递归:必须要有结束条件,只的是自己调用自己
+    //求num的阶乘
+    function factorial(num){
+      if ( num === 1){
+        return 1;
+      } else {
+        return num * factorial(num -1);//一直调用自己,5*4*3*2*1 但是最初始时要有值,否则报错
+      }
+    }
+
+    console.log(factorial(5));
+
+
+
+
+
+    //  //判断一个函数是否是普通对象,就是这个对象不是引用类型
+     function isPlainObject(o){
+       return Object.prototype.toString.call(o) === '[object Object]';
+     }
+
+     /*
+     深度克隆, Array,Object
+     @obj,可能是任意一种数据类型
+     */
+
+    //  {name:'lisi', age:22, hobby:[""]}
+     function deepCopy(obj){
+       var o; //o是返回的克隆之后的数据
+
+       //Array  or Object
+       if (typeof obj === 'object'){
+
+         //普通对象
+         if (isPlainObject(obj)){
+           o = {};//o为一个对象
+           for (var key in obj) {//遍历obj
+             o[key] = deepCopy(obj[key]);//用递归的方法自己调自己,不会造成赋值的问题
+           }
+
+           return o;
+         } else {
+           //数组
+           o = [];//o为一个数组
+           for (var i = 0; i < obj.length; i++) {
+             o[i] = deepCopy(obj[i]);
+           }
+           return o;
+         }
+       } else {
+         return obj;//else只不是对象或者数组,只是数字,字符串,布尔,直接返回就可以
+       }
+     }
+
+
+     var stu = {name:'lisi', age: 22, hobby: ["one", "two", {three: [1,2,3]}]};
+     var result = deepCopy(stu);//深复制是指,复制之后的量改变元素时,不会影响原来的元素
+                                //浅复制是指,复制后的量改变元素时,会影响原来的元素,引用类型.
+     result.hobby[2].three.push(4);
+     console.log("result = ", result);
+     console.log("stu = ", stu);
+
+
+
+
+     var obj={a:10,b:{name:'lisi',age:22}};
+     var c=obj.b;
+     obj.b.age=33;
+     console.log(obj);
+     console.log(c);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

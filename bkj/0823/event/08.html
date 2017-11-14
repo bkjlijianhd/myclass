@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>off解除事件绑定</title>
+  </head>
+  <body>
+
+    <button id="btn">按钮</button>
+
+    <script src="../jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    function handlerOne(){
+      console.log("触发单击 1...");
+    }
+
+    $("#btn").on('click', handlerOne);
+
+    $("#btn").on('click', function(){
+      console.log("触发单击 2 ...");
+
+
+       $("#btn").off('click', handlerOne);
+    });
+
+
+   $("#btn").dblclick(function(){
+     console.log("触发双击。。。。。");
+
+     $("#btn").off();
+   });
+
+
+    </script>
+
+  </body>
+</html>

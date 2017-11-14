@@ -1,0 +1,10 @@
+.one {
+  font-size: 100px;
+  opacity: 0.3;
+  color: red;
+  color: inherit(red 98%); }
+
+.two {
+  font-size: 10 px; }
+
+/*# sourceMappingURL=09.css.map */

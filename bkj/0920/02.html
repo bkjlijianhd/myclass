@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字符串回文</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var str="helloworlddlrowolleh";
+
+      function isPlaindrom(str){
+        var newStr=str.split('');//没有分割说明切割了全部
+        return str===(newStr.reverse().join(''));
+      }
+
+      console.log(isPlaindrom(str));//true
+      //返回值直接会转换成true或false
+
+    </script>
+  </body>
+</html>

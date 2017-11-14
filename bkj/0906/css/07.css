@@ -1,0 +1,13 @@
+.one, .two, .three {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center; }
+
+.two, .three {
+  background: yellow; }
+
+h1, .three {
+  font-size: 50px; }
+
+/*# sourceMappingURL=07.css.map */

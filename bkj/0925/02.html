@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>修改原型</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Person(name,age){
+        // 实例化的每个对象独有的属性(不能共享) 这里指的是在控制台上打印的在花括号中的属性
+        this.name=name;
+        this.age=age;
+      }
+      //将共有的属性和方法添加到构造函数的原型上！！！！！
+      //注意区分，单个属性添加和整体赋值的区别
+      //单个属性是外边的属性一个个的添加进去,并不会覆盖原有的属性 但是整体赋值会覆盖原有的
+      //属性,还会覆盖构造器constructor,需要自己补上.
+
+      Person.prototype={
+        constructor:Person,
+        sayHello:function(){
+          console.log("熊猫直播");
+        },
+        blackHair:true
+      };
+
+      console.log(Person.prototype);
+
+      var one=new Person('lisi',20);
+      var two=new Person('zhangsan',20);
+
+      console.log("one= ",one);
+      console.log("two= ",two);
+
+      one.sayHello();
+      two.sayHello();
+
+      console.log(one.blackHair);//true
+      //通过 constructor可以得到该对象是由哪个构造函数产生的！！！！
+      console.log(one.constructor);//Person
+      //封装 隐藏实现细节，只对外提供接口即可！！！
+    </script>
+  </body>
+</html>

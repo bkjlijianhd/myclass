@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>运算符</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a=10,b=3;
+      console.log(a+b);//13
+      console.log(a-b);//7
+      console.log(a*b);//30
+      console.log(a/b);//3.3333
+      console.log(a%b);//1
+
+      console.log(!10);//false
+      console.log(!0);//true
+      console.log(!true);//false
+      console.log(!false);//true
+      console.log(!'hello');//false
+      console.log(!'');//true
+
+      var c;
+      if(!c){
+        console.log("^_^!!!");
+      }  //c undefied !c为真
+
+      console.log(10&&0);//0
+      console.log(0&&10);//0
+      console.log(10&&20);//20
+      console.log(10&&true);//true
+      console.log(10&&false);//false
+
+      var d=10;
+      console.log(10&&20&&30&& d++);//10  都真的d++留下
+      console.log(d);//11
+
+      var e=10,f=10;
+      var result1=e++;
+      var result2=++f;
+      console.log(result1,result2,e,f);//10 11 11 11
+
+      console.log((10<20)&&(10<5));//false
+
+
+      console.log(10||false);//10
+      console.log(false||10||20);//10
+      console.log((10<20)||(10>5));//true
+
+      console.log(10>20);//false
+      console.log(10<20);//true
+      console.log(10<"23");//true
+      console.log("23">"233");//flase
+
+      console.log(10>NaN);//flase
+      console.log(10<NaN);//flase
+      console.log(10==NaN);//flase
+      console.log(NaN==NaN);//flase
+
+      console.log(10=="10")//true
+      console.log(10==="10")//flase
+      console.log(10!="10")//flase
+      console.log(10!=="10")//true
+
+
+      var result=10>20?'hello':'world'
+      console.log(result);
+      /*
+     if (10>20){
+     result = 'hello';
+     } else {
+     result = 'world';
+     }
+     */
+
+       var a=10,b=20;
+       a+=b;
+       a-=b;
+       a*=b;
+       a/=b;
+       a%=b;
+
+       var a=10,b=20,result;
+       result=(a++,a++,b++);
+      //  逗号运算符取最后一个的结果为整个表达式的结果,但是前边所有的表达式都会运算
+      //  只执行b++
+       console.log(a,b,result);//12 21 20
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .w{
+        width: 1215px;
+        margin: 0 auto;
+      }
+      .head{
+        height: 99px;
+      }
+      .tp{
+        float:left;
+      }
+      .hyzc{
+        width: 117px;
+        height: 34px;
+        line-height: 34px;
+        margin-left: 182px;
+        margin-top: -68px;
+        font-size: 24px;
+        color: #333;
+      }
+      .yiyou{
+        width: 86px;
+        height: 19px;
+        line-height: 19px;
+        font-size: 16px;
+        color: #999;
+        margin-left: 889px;
+        margin-top: -25px;
+      }
+      .qdl{
+        width: 54px;
+        height: 19px;
+        line-height: 19px;
+        font-size: 16px;
+        color: #333;
+        margin-left: 86px;
+        margin-top: -20px;
+      }
+      a{
+        text-decoration: none;
+        color: #333;
+      }
+      a:link{
+        color: #333;
+      }
+      .hx{
+        height: 6px;
+        background: rgb(243, 243, 243);
+      }
+      .hexin{
+        width: 989px;
+        height: 720px;
+        margin-left: 167px;
+      }
+      .stxx{
+        width: 413px;
+        height: 720px;
+      }
+      .bt{
+        width: 10px;
+        height: 600px;
+        margin-left: 518px;
+        margin-top: -664px;
+        border-left: 1px solid gray;
+      }
+      .youce{
+        width: 180px;
+        height: 140px;
+        margin-left: 639px;
+        margin-top: -604px;
+        background-image: url(./jddl/xq04.png);
+        background-repeat: no-repeat;
+        background-position: 0px 93px;
+      }
+      .youce img{
+        float: left;
+      }
+      .sbu{
+        width: 135px;
+        height: 27px;
+        line-height: 55px;
+        font-size: 14px;
+        margin-top: 90px;
+        margin-left: 49px;
+      }
+      .xiabu{
+        width: 121px;
+        height: 43px;
+        margin-left: 40px;
+        margin-top: 73px;
+        font-size: 14px;
+      }
+      .bb{
+        width: 157px;
+        height: 10px;
+        margin-top: -75px;
+        margin-left: 5px;
+        border-top:  1px solid gray;
+      }
+      .foot{
+        width: 1215px;
+        height: 109px;
+        margin-left: 153px;
+      }
+      .foot_1{
+        width:854px;
+        height: 26px;
+        line-height: 26px;
+        margin: 31px 0px;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+      }
+      .foot_1 a{
+        padding-left: 25px;
+      }
+      .foot_2{
+        width:274px;
+        height: 18px;
+        font-size: 12px;
+        color: #999;
+        margin: -15px 306px;
+        text-align: center;
+      }
+      .one1{
+        width: 400px;
+        height: 55px;
+        border: 1px solid gray;
+        margin-left: 11px;
+        margin-top: 56px;
+      }
+      .one1 input{
+        width: 220px;
+        height: 35px;
+      }
+      .one1 img{
+        float: left;
+      }
+      .one2{
+        width: 400px;
+        height: 55px;
+        border: 1px solid gray;
+      }
+      .one2 img{
+        float: left;
+      }
+      .one2 input{
+        width: 220px;
+        height: 35px;
+      }
+      .one3{
+        width: 400px;
+        height: 55px;
+        border: 1px solid gray;
+      }
+      .one3 input{
+        width: 220px;
+        height: 35px;
+      }
+      .one3 img{
+        float: left;
+      }
+      .one4{
+        width: 400px;
+        height: 55px;
+        border: 1px solid gray;
+      }
+      .one4 input{
+        width: 220px;
+        height: 35px;
+        margin-left: 1px;
+      }
+      .one4 img{
+        float: left;
+      }
+      .one5{
+        width: 400px;
+        height: 55px;
+        background-image: url(./jddl/66.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        border: 1px solid gray;
+      }
+      .one5 input{
+        width: 100px;
+        height: 35px;
+      }
+      .one5 img{
+        float: left;
+      }
+      .one6{
+        width: 400px;
+        height: 55px;
+        margin-top:38px;
+        margin-left: -1px;
+        background-image: url(./jddl/88.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        border: 1px solid gray;
+      }
+      .one6 input{
+        width: 80px;
+        height: 35px;
+      }
+      .one6 img{
+        float: left;
+      }
+      .one7{
+        width: 400px;
+        height: 55px;
+        line-height: 55px;
+        margin-top: 38px;
+        margin-left: -1px;
+        border: 1px solid red;
+        background: #e22;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+      }
+      .one7 a{
+        color: #fff;
+      }
+      input{
+        margin-top: 8px;
+        margin-right:47px;
+        text-align: center;
+      }
+      .two1{
+        width: 400px;
+        height: 28px;
+        line-height: 28px;
+        color:#666;
+        font-size: 12px;
+        margin-top: 9px;
+        margin-left: -1px;
+      }
+      .two2{
+        width: 400px;
+        height: 28px;
+        font-size: 12px;
+        line-height: 28px;
+        color:#666;
+        margin-top: 9px;
+        margin-left: -1px;
+        text-align: center;
+      }
+      .two3{
+        width: 400px;
+        height: 28px;
+        font-size: 12px;
+        margin-top: 9px;
+        margin-left: -1px;
+        line-height: 28px;
+        color:#666;
+      }
+      .two4{
+        width: 400px;
+        height: 28px;
+        font-size: 12px;
+        line-height: 28px;
+        color:#666;
+        margin-top: 9px;
+        margin-left: -1px;
+      }
+      span{
+        visibility: hidden;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="w">
+      <div class="head">
+        <div class="tp">
+          <img src="./jddl/xq02.png" alt="">
+        <div class="hyzc">欢迎注册
+          <div class="yiyou">已有帐号?
+            <div class="qdl"><a href="#">请登录</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="hx"></div>
+
+    <div class="w">
+      <div class="hexin">
+        <div class="stxx">
+          <div class="one1"><img src="./jddl/11.png" alt="">
+            <input class="b1" type="text" value="您的账户名和登录名" style="border:0" onfocus="if(this.value=='您的账户名和登录名')this.value='';" onblur="if(value==''){value='您的账户名和登录名'}">
+          <div class="two1"><span class="p1">支持中文字母数字"-"_"的组合,4-20个字符</span>
+          <div class="one2"><img src="./jddl/22.png" alt="">
+            <input class="b2" type="text" value="建议至少使用两种字符组合" style="border:0" onfocus="if(this.value=='建议至少使用两种字符组合')this.value='';" onblur="if(value==''){value='建议至少使用两种字符组合'}">
+          <div class="two2"><span class="p2">建议使用字母数字合符号两种及以上的组合,6-20个字符</span>
+          <div class="one3"><img src="./jddl/33.png" alt="">
+            <input class="b3" type="text" value="请再次输入密码" style="border:0" onfocus="if(this.value=='请再次输入密码')this.value='';" onblur="if(value==''){value='请再次输入密码'}">
+          <div class="two3"><span class="p3">请再次输入密码</span>
+          <div class="one4"><img src="./jddl/44.png" alt="">
+            <input class="b4" type="text" value="建议使用常用手机" style="border:0" onfocus="if(this.value=='建议使用常用手机')this.value='';" onblur="if(value==''){value='建议使用常用手机'}">
+          <div class="two4"><span class="p4">完成验证后,你可以用该手机登录和找回密码</span>
+          <div class="one5"><img src="./jddl/55.png" alt="">
+            <input type="text" value="请输入验证码" style="border:0" onfocus="if(this.value=='请输入验证码')this.value='';" onblur="if(value==''){value='请输入验证码'}">
+          <div class="one6"><img src="./jddl/77.png" alt="">
+            <input type="text" value="手机验证码" style="border:0" onfocus="if(this.value=='手机验证码')this.value='';" onblur="if(value==''){value='手机验证码'}">
+          <div class="one7"><a href="#">立即注册</a>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="bt"></div>
+        <div class="youce">
+        <img src="./jddl/xq03.png" alt="">
+        <div class="sbu"><a href="#">企业用户注册</a></div>
+        <div class="xiabu">
+          <a href="#">
+          INTERNATIONAL
+          CUSTOMERS
+          </a>
+        </div>
+        <div class="bb"></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="w">
+      <div class="foot">
+        <div class="foot_1">
+          <a href="#">关于我们</a>
+          <a href="#">联系我们</a>
+          <a href="#">人才招聘</a>
+          <a href="#">商家入驻</a>
+          <a href="#">广告服务</a>
+          <a href="#">手机京东</a>
+          <a href="#">友情链接</a>
+          <a href="#">销售联盟</a>
+          <a href="#">京东社区</a>
+          <a href="#">京东公益</a>
+          <a href="#">English&nbsp;Site</a>
+        </div>
+        <div class="foot_2">Copyright©2004-2016  京东JD.com 版权所有 </div>
+      </div>
+    </div>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $(".b1").focus(function(){
+      $(".p1").css("visibility", "visible");
+    });
+
+    $(".b2").focus(function(){
+      $(".p2").css("visibility", "visible");
+    });
+
+    $(".b3").focus(function(){
+      $(".p3").css("visibility", "visible");
+    });
+
+    $(".b4").focus(function(){
+      $(".p4").css("visibility", "visible");
+    });
+
+
+    $("input").blur(function(){
+      $("span").css("visibility", "hidden");
+    });
+
+    </script>
+  </body>
+</html>

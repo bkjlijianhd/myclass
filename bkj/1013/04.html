@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>智能表单</title>
+  </head>
+  <body>
+    <!-- novalidate控制是否进行数据校验，默认是开启的 -->
+    <!-- autocomplete决定了 是否开启自动完成的功能  -->
+    <!-- 也有兼容问题 -->
+    <form action="#" method="get" autocomplete="off">
+
+      email:<input type="email" name="email" placeholder="请输入邮箱" list="emails"><br>
+
+      <!-- datalist用于给input提供预定义的选项
+       list的属性值必须为datalist的id
+    -->
+      <datalist id="emails">
+        <option >xxx@yyy.com</option>
+        <option >yyy@zzz.com</option>
+        <option >zzz@aaa.com</option>
+      </datalist>
+
+      url:<input type="url" name="url" required>
+      <!-- required指定必须填写 required属于bool属性， 直接写名字就行-->
+      number:<input type="number" name="number" value="" min="20" max="100" step="2"><br>
+      range:<input type="range" name="range" value="0.5" min="0" max="1" step="0.1">
+
+        <!-- 日期还有兼容性问题，尽量少用  -->
+      date:<input type="date" name="" value=""><br><br>
+      month:<input type="month" name="" value=""><br><br>
+      week:<input type="week" name="" value=""><br><br>
+      time:<input type="time" name="" value=""><br><br>
+
+      正则表达式校验:<input type="text" id="text" pattern="\d+"><br><br>
+      <!-- pattern是正则表达式，可以用于进行校验  -->
+
+      search:<input type="search" autofocus><br>
+      <!-- autofocus 属性表示自动获取焦点 -->
+
+        <!-- multiple是文件多选  -->
+      <input type="file" name="" value="" multiple><br><br>
+      <button>提交</button>
+
+
+
+      <script type="text/javascript">
+
+        // var text=document.getElementById('text');
+        // text.focus();
+      </script>
+    </form>
+  </body>
+</html>

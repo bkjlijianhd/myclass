@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery两版本冲突</title>
+  </head>
+  <body>
+    <script src="./jquery-2.2.2.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    console.log($.fn.jquery);
+    console.log(jQuery.fn.jquery);
+  </script>
+
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      console.log($.fn.jquery);
+      console.log(jQuery.fn.jquery);
+    </script>
+    采取jquery先引入2.2.2版本,再引入3.0.0版本分开引入,各自操作,不影响.
+  </body>
+</html>

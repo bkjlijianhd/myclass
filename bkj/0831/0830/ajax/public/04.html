@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>模拟登录</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      p{
+        color: red;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+      <form id="account" action="/login" method="post">
+        <p>用户名或者密码!</p>
+      username:<input type="text" name="name"><br><br>
+      password:<input type="password" name="passwd"><br><br>
+      <!-- possword的name必须为"passwd" type可以为其他 -->
+      <button>登录</button>
+    </form>
+
+      <script src="./js/jquery.min.js" charset="utf-8"></script>
+      <script>
+        $(function(){
+          $("#account").submit(function(){
+            var username=$("#account input[name=name]").val();
+            var password=$("#account input[name=passwd]").val();
+            if((!username)||(!password)){
+              $("p").css("visibility","visible");
+              return false;
+            }
+          });
+        });
+      </script>
+  </body>
+</html>

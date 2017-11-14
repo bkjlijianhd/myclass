@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>跑动的小人</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+      <input id="font" type="button" name="font" value="font">
+      <input id="left" type="button" name="left" value="left">
+      <input id="right" type="button" name="right" value="right">
+      <input id="back" type="button" name="back" value="back">
+
+      <script type="text/javascript">
+      var can = document.getElementById('canvas');
+      can.style.border = "1px solid gray";
+      var ctx = can.getContext('2d');
+
+        var font=document.getElementById('font');
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        var back=document.getElementById('back');
+
+        var img = new Image();
+        img.src = "image/1.png";
+        img.alt = "图片";
+
+        img.onload=function(){
+          var positionX=0,positionY=0;
+          var speed=10;
+          var width=img.width/4,height=img.height/4;
+
+          setInterval(function(){
+            ctx.clearRect(0,0,can.width,can.height);
+            ctx.drawImage(img,positionX*width,positionY*height,width,height,250,250,2*width,2*height);
+
+            positionX++;
+            positionX%=4;
+          },1000/speed);
+
+          font.onclick=function(){
+            positionY=0;
+          };
+
+          left.onclick=function(){
+            positionY=1;
+          };
+
+          right.onclick=function(){
+            positionY=2;
+          };
+
+          back.onclick=function(){
+            positionY=3;
+          };
+
+        }
+
+      </script>
+
+    </canvas>
+  </body>
+</html>

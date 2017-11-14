@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>弹力球</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <canvas id="canvas" width="600" height="500" style="border: 1px solid red;"></canvas>
+
+  <script type="text/javascript">
+    var can = document.getElementById("canvas");
+    var cxt = can.getContext('2d');
+
+    var x = 50,
+      y = 50,
+      vx = 2,
+      vy = 0,
+      gy = 1;
+
+    var timer = setInterval(function() {
+      //render
+      can.width = can.width;
+      cxt.fillStyle = "red";
+      cxt.arc(x, y, 20, 0, Math.PI * 2, false);
+      cxt.fill();
+
+
+      //update
+      x += vx;//水平步长为2
+      y += vy;//垂直
+      vy += gy;
+
+      if (y > can.height - 20) {
+        y = can.height - 20;
+        vy = -vy * 0.7;//表示上弹过程，速度一直增加，上的越来越慢，但有上限
+        vy = Math.abs(vy) < 4 ? 0 : vy;//决定上限
+        // console.log(vy);
+
+        if (vy === 0) {
+          vx = 0;
+          clearInterval(timer);
+        }
+      } else if (y < 20) {
+        y = 20;
+        // vy = -vy * 0.7;
+      }
+
+    }, 50);
+  </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>replace</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //String.prototype.replace()
+
+     //第一个参数，是一个字符串，那么只会替换第一个
+      var result="helloworldhelloworld".replace("hello","HELLO");
+      console.log(result);//HELLOworldhelloworld
+     //第一个参数，正则表达式，那么根据根据来
+      result="helloworldhelloworld".replace(/hello/g,"HELLO");
+      console.log(result);//HELLOworldHELLOworld
+
+      result="helloworldhelloworldhelloworldhelloworld".replace(/(hello)(world)/g,function(match,p1,p2,offset,str){
+        console.log("match=",match);//match= helloworld
+        console.log("p1=",p1);//p1= hello
+        console.log("p2=",p2);//p2= world
+        console.log("offset=",offset);//10 20 30(index)
+        console.log("str=",str);//helloworldhelloworldhelloworldhelloworld
+         //函数的每次的返回值都是用于替换 match
+
+         //注意p1 和p2是看捕获了几个参数就写几个参数
+        return "HELLOWORLD";
+      });
+      console.log(result);//HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLD
+
+
+
+      //连字符 转换为驼峰法命名
+      function toTuoFen(str){
+        var result=str.replace(/-([a-z])/g,function(match,p1){
+          return p1.toUpperCase();
+        });
+        return result;
+      }
+      console.log(toTuoFen("background-color"));//backgroundColor
+      console.log(toTuoFen("background-clip"));//backgroundClip
+      console.log(toTuoFen("border-left-width"));//borderLeftWidth
+
+    
+
+
+
+
+
+    </script>
+  </body>
+</html>

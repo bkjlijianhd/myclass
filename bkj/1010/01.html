@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>offset相关</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        width: 600px;
+        height:300px;
+        margin: 50px auto;
+        border:10px solid green;
+        padding: 10px;
+        position: relative;
+      }
+      #box{
+        width:200px;
+        height:200px;
+        padding:20px;
+        border:10px solid red;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f">
+      <div id="box"></div>
+    </div>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      console.log("/*********jQuery********/");
+      console.log($(window).width());//获得窗口的宽度
+      console.log($(document).width());//document的宽度也为窗口的宽
+
+
+      console.log($("#box").width());//200 获取 内容 width
+      console.log($("#box").innerWidth());//240 获取  width + padding
+      console.log($("#box").outerWidth());//260 获取  width + padding + border
+
+
+      console.log("/*********原生js********/");
+      var box=document.getElementById("box");
+       //获取  width + padding + border
+      console.log(box.offsetWidth);//260  只读属性
+      //获取  width + padding
+      console.log(box.clientWidth);//240   只读属性
+
+      //获取  width
+       var styles=window.getComputedStyle(box);
+       console.log(parseInt(styles.width));//200
+       console.log(styles.border);//10px solid rgb(255, 0, 0)
+
+       console.log("/*************位置有关系***********************/");
+
+       console.log("box.offsetLeft=",box.offsetLeft);//0 其实这两个属性找准设置相对定位的元素
+       console.log("box.offsetTop=",box.offsetTop);//0 就是绝对定位中的left 和top
+  //go(n), n决定了跳转到那个页
+       box.style.left="100px";//设置完毕之后， offsetLeft也就变了
+       box.style.left="100px";//设置完毕之后， offsetTop变了
+      //但是 设置offsetLeft后 box.style.left不会变
+      //但是 设置offsetTop后 box.style.top不会变
+
+       console.log("box.offsetParent=",box.offsetParent);//<div class="f"></div>
+    </script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

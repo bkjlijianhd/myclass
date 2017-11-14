@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>网页进度条</title>
+  <style media="screen">
+    .loading {
+      background: pink;
+      height: 5px;
+      position: fixed;
+      top: 0;
+      z-index: 10
+    }
+  </style>
+</head>
+
+<body>
+  <div>页头部分</div>
+  <div>左侧内容</div>
+  <div>右边侧栏</div>
+  <div>页脚部分</div>
+
+  <div class="loading"></div>
+
+  <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $('.loading').animate({
+      'width': '40%'
+    }, 50);
+
+    $('.loading').animate({
+      'width': '55%'
+    }, 50);
+
+    $('.loading').animate({
+      'width': '80%'
+    }, 50);
+
+    $('.loading').animate({
+      'width': '100%'
+    }, 50);
+
+    $(document).ready(function() {
+      $('.loading').fadeOut();
+    });
+    $(document).ready(function() {
+      $('.loading').fadeOut();
+    });
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>图片延迟加载</title>
+  <style>
+    img {
+      display: block;
+      width: 350px;
+      height: 245px;
+      background:lightpink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div">
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+    <img src="" alt="" data-url="./01.jpeg" class="test"><br>
+
+  </div>
+  <script type="text/javascript">
+    var obj = document.getElementById("div").getElementsByTagName("img"),
+      h = window.innerHeight || document.documentElement.clientHeight;
+    for (var i = 0; i < obj.length; i++) {
+      obj[i].url = obj[i].getAttribute("data-url");
+      obj[i].top = obj[i].offsetTop;
+      obj[i].flag = true;
+    }
+    var fnLoad = function(obj) {
+      var t = document.body.scrollTop || document.documentElement.scrollTop;
+      if (t + h > obj.top + 200 && obj.top > t) {
+        setTimeout(function() {
+          obj.src = obj.url;
+          obj.flag = false;
+        }, 500)
+      }
+    }
+    window.onscroll = window.onload = function() {
+      for (var i = 0; i < obj.length; i++) {
+        if (obj[i].flag) {
+          fnLoad(obj[i]);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

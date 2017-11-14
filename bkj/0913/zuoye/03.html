@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>十变二</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function convert() {
+      var num = prompt();
+      var temp = num;
+      var arr = new Array();
+      for (var i = 0; 1; i++) {
+        if (num / 2 >= 1) {
+          arr[i] = num % 2;
+          num = parseInt(num / 2);
+        } else {
+          arr[i] = 1;
+          break;
+        }
+      }
+      console.log('十进制的' + temp + '转化成二进制为：');
+      for (i = arr.length; i > 0; i--) {
+        console.log(arr[i - 1]);
+      }
+    }
+    convert();
+
+  </script>
+</body>
+
+</html>

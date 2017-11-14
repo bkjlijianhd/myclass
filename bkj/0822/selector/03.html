@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>属性选择器 和css是一致的</title>
+  </head>
+  <body>
+
+    <div name="one">1111</div>
+    <div name="one">1111</div>
+    <div name="one">1111</div>
+    <div name="on-1">1111</div>
+    <div name="on-2">1111</div>
+    <div name="onno">1111</div>
+    <div>1111</div>
+
+
+
+
+    <div  data="hello">222</div>
+    <div  data="worldhello">222</div>
+    <div  data="helloworld">222</div>
+
+    <script src="../jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $("[name=one]").css("color","red");
+      $("[name|=on]").css("font-size","50px");
+      $("[data$=hello]").css("font-size","50px");
+      $("[data^=hello]").css("color","pink");
+
+      // 属性选择器设置style:
+      // [title]
+      // {
+      // color:red;
+      // }
+      //
+      // [title=W3School]
+      // {
+      // border:1px solid blue;
+      // }
+      //
+      // [title~=hello] { color:red; }
+
+
+
+    </script>
+
+
+
+
+
+
+  </body>
+</html>

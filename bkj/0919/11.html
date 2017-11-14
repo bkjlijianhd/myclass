@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function test() {
+      var flage = true;
+      var b = ['hello','world','hehe','eheh','dlrow','olleh'];
+      var chs = toArray(b);
+      for (var i = 0; i < chs.length / 2; i++) {
+        if (chs[i] != chs[(chs.length - 1) - i]) {
+          flage = false;
+          break;
+        }
+      }
+      return flage; //
+    }
+    var a = test();
+    if (a) {      console.log("是回文数");
+    }
+    function toArray(str) {
+      if (typeof str != "string") {
+        return [];
+      }
+      var arr = [];
+      for (var i = 0; i < str.length; i++) {
+        arr.push(str.charAt(i))
+      }
+      return arr;
+    }
+  </script>
+</body>
+
+</html>

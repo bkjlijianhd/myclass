@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ie中的event对象</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <a href="https://www.baidu.com" id="ln" target="_blank">百度</a>
+    <script type="text/javascript">
+      console.log(window);
+      var btn=document.getElementById("btn");
+      var ln=document.getElementById("ln");
+
+      btn.onclick=function(){
+          //ie低版本中处理函数中，没有event对象
+         //所以只能有window.event来代替
+        // console.log(window.event);
+
+
+        console.log(this);
+         //cancelBubble 取代 stopPropagation()
+        window.event.cancelBubble=true;
+      }
+
+      document.attachEvent('onclick',function(){
+        console.log("document....");
+        //ie 低版本中 window.event对象上，没有target,currentTarget
+        //使用srcElement取代target
+        console.log(window.even.srcElememt);// window.event.srcElement是触发事件的源头
+      },false);
+
+      ln.onclick=function(){
+        window.event.returnValue=false;
+         // window.event.returnValue 的值来决定是否取消默认行为，
+        // 和 event.preventDefault() 功能一致
+      }
+    </script>
+  </body>
+</html>

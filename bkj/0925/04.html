@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Super(){
+        this.colors=["red","green","blue"];
+      }
+      Super.prototype.hobby=["read", "sleep", "play"];
+
+      function Sub(){}
+      Sub.prototype=new Super();
+      Sub.prototype.constructor=Sub;//整体赋值需要写构造器
+
+      var one=new Sub();
+      //console.log(one);直接打印出Sub对象__proto__Super中有["red","green","blue"]
+      //  __proto__object中有["read", "sleep", "play"]
+
+
+      one.colors.push("purple");
+      //直接修改继承来的原型上的colors，但是也不会影响继承的构造函数,会影响继承
+
+
+       //直接赋值的方式，会给对象自己添加一个同名属性,不会影响 继承的构造函数
+      one.colors=["purple","black"];
+
+
+        //通过当前对象，直接修改继承的构造函数的原型，很危险!!!!
+      one.hobby.push("eat");//加到了__proto__Super的hobby中
+      console.log(one);
+
+       //Super的原型被以上代码修改了，导致后续所有使用Super产生的对象，都收到了影响
+      var two=new Super();
+      console.log("two=",two);//super对象  __proto__object中有["read", "sleep", "play",eat]
+                              //已被修改
+
+
+    </script>
+  </body>
+</html>

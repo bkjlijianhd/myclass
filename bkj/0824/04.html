@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .message>p{
+        color:red;
+        visibility: hidden;
+      }
+    </style>
+    <title>不用form只用控件</title>
+  </head>
+  <body>
+    <div class="message">
+      <p>用户名或者密码不能为空!</p>
+    用户名:<input type="text" name="username"><br>
+    密  码:<input type="password" name="passwd"><br>
+    <button id="login">登录</button>
+    </div>
+
+  <script src="./jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(".message input").focus(function(){
+      $(".message p").css("visibility","hidden");
+    });
+
+    $("#login").click(function(){
+      var username=$(".message input[name=username]").val();
+      var passwd=$(".message input[name=passwd]").val();
+      console.log(username,passwd);
+
+      if((!username)||(!passwd)){
+        $(".message p").css("visibility","visible");
+      }
+    });
+
+
+
+  </script>
+
+
+  </body>
+</html>

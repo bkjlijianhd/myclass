@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>break</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      out:for (var j=0;j<10;j++){
+        console.log("j="+j);
+        for(var i=0;i<10;i++){
+          console.log("i="+i);
+          if(i==5){
+            break out;
+          }
+        }
+      }
+      for(var i=0;i<10;i++){
+        console.log("i="+i);
+        if(i==5){
+          break;
+        }
+      }
+      console.log("after for...");
+    </script>
+  </body>
+</html>

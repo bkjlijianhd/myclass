@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>高阶函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function sum(a,b){
+        return a+b;
+      }
+      function pow2(num){
+        return num*num;
+      }
+
+      function createFun(fun1,fun2){
+        return function(arg1,arg2){
+          return fun2(fun1(arg1,arg2));
+        };//fun1 fun2传的是sum 和pow2
+      }//arg1 arg2传的是10 20
+      var sumAndPow2=createFun(sum,pow2);
+      console.log(sumAndPow2(10,20));//900
+    </script>
+  </body>
+</html>

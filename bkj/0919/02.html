@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js中属性特性 克隆 事件委托</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <ul id="lists">
+      <li>11</li>
+      <li>22</li>
+      <li>33</li>
+    </ul>
+    <div id="box" name="hehe">bkj看见你</div>
+
+    <div id="clone">
+    <div>点我</div>
+    </div>
+
+    <script src="./jquery.js" charset="utf-8"></script>
+    <script type="text/javascript">
+         // jQuery中的事件委托操作
+      $("#lists").on("click","li",function(event){
+         //jQuery中的事件委托中， 处理函数内容  this  =====  event.target都是事件源
+        console.log(event.target);
+        console.log(this);
+      });
+
+
+      var box=$("#box");
+      console.log(box.attr("name"));//hehe
+      console.log(box.attr("age"));//undefined 本身没有
+
+      console.log(box.prop("name"));//undefined//prop获得不了特定的name
+
+        //设置特性
+      box.attr("name","lisi");//改name名字为lisi
+        //删除特性
+      box.removeAttr("name");//移除name
+
+      //JS clone有关  默认克隆所有元素,事件的克隆需要设置值为true
+      var cl=$("#clone");
+      cl.click(function(){
+        console.log("clone元素被点击...");
+      });
+
+      cl.children().eq(0).mouseover(function(){
+        console.log("clone的子元素mouseover...");
+      });
+       //参数为true，保证了所有的事件也被克隆了
+      cl.clone(true).appendTo("body");
+
+
+    </script>
+
+
+
+
+
+
+  </body>
+</html>

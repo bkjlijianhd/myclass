@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>年月日第几天</title>
+</head>
+<body>
+<script type="text/javascript">
+    //弹出年、月、日输入框,声明年鱼儿，并赋值
+    // 如果用户单击提示框的取消按钮，则返回 null。如果用户单击确认按钮，则返回输入字段当前显示的文本。
+    var y =parseInt(prompt("请输入你的出生年份"));
+    var m = parseInt(prompt("请输入你的出生月份"));
+    var d =parseInt(prompt("请输入你的出生日期"));
+    //月
+    //求各月份数字之和
+    var getMonth=new Array(31,28,31,30,31,30,31,31,30,31,30);
+    var sum1=0,i;
+    for(i=0;i<m-1;i++){
+        sum1+=getMonth[i]
+        }
+
+    //年
+    //判断年是否为闰年，是且大于2月份加一
+        if(( y%400 ==0||(y % 4 == 0&& y%100 !=0))&& m > 2){
+            sum=sum1 + d +1;
+            document.write("该天为一年中的第"+sum+"天");
+        }else{
+            sum=sum1+d;
+            document.write("该天为一年中的第"+sum+"天");
+        }
+</script>
+</body>
+</html>

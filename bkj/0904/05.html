@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>媒体查询</title>
+    <style>
+      /*<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">*/
+
+      <meta name="viewport"
+   content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" >
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .one{
+        font-size: 50px;
+        color:red;
+      }
+      @media screen and (width:1000px){
+        .one{
+          color:green;
+        }
+      }
+      .two{
+        color:purple;
+      }
+      @media all and (min-width:980px) {
+        .two{
+          color:orange;
+          font-size:100px;
+        }
+      }
+      @media all and (max-width:1200px) {
+        .two{
+          background: yellow;
+        }
+      }
+
+      .three{
+        font-size: 100px;
+      }
+
+      @media all and (min-width:600px) and (max-width:980px){
+        .three{
+          color:green;
+        }
+      }
+      @media all and (min-width:981px) and (max-width:1200px){
+        .three{
+          color:yellow;
+        }
+      }
+      @media all and (min-width:1201px) and (max-width:1920px){
+        .three{
+          color:blue;
+        }
+      }
+      /*and前后必须有空格!!!!*/
+
+    </style>
+  </head>
+  <body>
+    <div class="one">开始是红色的</div>
+    <div class="two">two元素</div>
+    <div class="three">three元素</div>
+  </body>
+</html>

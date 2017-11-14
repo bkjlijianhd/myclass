@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>鼠标事件</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .one{
+        width:300px;
+        height:200px;
+        background:purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one"></div>
+    <script src="../jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // $(".one").click(function(){
+      //   alert("div被点击");
+      // });
+      function handlerClick(){
+        console.log("单击。。。");
+      }
+      $(".one").click(handlerClick);
+
+
+      $(".one").click(function(){
+        $(".one").css("background-color","red");
+      });
+      // console.log("事件处理");
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

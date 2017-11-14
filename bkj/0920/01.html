@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dxzh</title>
+  </head>
+  <body>
+    <div>
+      输入:<input id="in" type="text">
+      <button type="button" id="btn">转为大写</button>
+    </div>
+    <h1>输出:<span id="out"></span></h1>
+
+    <script type="text/javascript">
+      var ins=document.getElementById('in');
+      var out=document.getElementById('out');
+      var btn=document.getElementById('btn');
+
+      btn.onclick=function(){
+        out.innerHTML=convertToUpper(ins.value);
+      };
+
+      function convertToUpper(str){
+        var result="",code;
+        for(var i=0;i<str.length;i++){
+          code=str.charCodeAt(i);
+          if((code>=97)&&(code<=122)){
+            code-=32;
+            result+=String.fromCharCode(code);
+          }else{
+            result+=str[i];
+          }
+        }
+        return result;
+      }
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

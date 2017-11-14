@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字符串操作</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      var str1='helloworld中国人';
+      var str2=new String("worldhello");
+
+      console.log(str1);
+      console.log(str2);
+
+      //charAt()找到某一个元素
+      console.log(str1.charAt(0));//h
+      console.log(str1[0]);//h
+
+      str1[0]='H';//无效，字符串不可变
+      console.log("str1.length",str1.length1);
+      console.log("str1=",str1);
+
+      for(var i=1;i<str1.length;i++){
+        console.log(str1[i]); //可遍历
+      }
+
+      // //charCodeAt,得到字符的编码
+      console.log(str1.charCodeAt(10));
+      console.log(str1.charCodeAt(0));//104
+       // fromCharCode()将编码转为字符
+      console.log(String.fromCharCode(97,98,99,100,101,102));//abcdef
+
+
+      var str2="android apple Iphone mac iphone";
+      console.log(str2.indexOf("iphone",20));//25  20表示从哪找
+
+      var str3="sdkjgkdjk kdjkdkhjkjhkdj6285uyu";
+      console.log(str3.slice(0,10));
+      console.log(str3.slice(-20,20));//负的从右往左数,正的相反
+
+      console.log(str3.substr(10,20));//前一个10为开始位置20为指定长度
+
+      console.log(str3.slice(10,0));//为空,不支持逆序写
+      console.log(str3.substring(10,0));//sdkjgkdjk支持逆序
+
+      console.log("HELLOWORLkjgkjgk".toLowerCase());//转换小写
+      console.log("skjgkjkjhkhjHJEKJGKJGKJG".toUpperCase());//转换大写
+
+      //split 字符串切割
+      var str4="hello  world  google  apple";
+      console.log(str4.split('  ',2));//''表示分隔符,里边可以一个空格可以两个空格,后边2为长度,切完为数组
+
+    </script>
+  </body>
+</html>
